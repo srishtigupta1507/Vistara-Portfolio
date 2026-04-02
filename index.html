@@ -3,69 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistara Tech | Official Portfolio</title>
+    <title>Vistara Tech | Software Solutions & Analytics</title>
     <script src="https://tailwindcss.com"></script>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #080808; color: #f0f0f0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .gold-glow { text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); color: #d4af37; }
-        .btn-gold { background: linear-gradient(45deg, #d4af37, #f9e29c); color: #000; font-weight: 900; transition: 0.4s; border: none; }
-        .btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); background: #fff; cursor: pointer; }
-        .card-premium { background: #111; border: 1px solid #222; transition: 0.3s; }
-        .card-premium:hover { border-color: #d4af37; transform: translateY(-5px); }
-        .gradient-text { background: linear-gradient(to right, #d4af37, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        :root { --accent: #D4AF37; --bg: #0A0A0A; }
+        body { background-color: var(--bg); color: #FFFFFF; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        /* Minimalist Navigation */
+        nav { border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+        
+        /* Clean Cards */
+        .service-card { 
+            background: #111111; 
+            border: 1px solid #1A1A1A; 
+            transition: all 0.3s ease; 
+        }
+        .service-card:hover { 
+            border-color: var(--accent); 
+            transform: translateY(-4px); 
+        }
+
+        /* Professional Button */
+        .btn-main { 
+            background-color: var(--accent); 
+            color: #000; 
+            font-weight: 600; 
+            transition: 0.3s; 
+        }
+        .btn-main:hover { 
+            background-color: #FFF; 
+            transform: translateY(-2px); 
+        }
+
+        .section-title { 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.3em; 
+            color: var(--accent); 
+            font-weight: 700; 
+        }
     </style>
 </head>
-<body class="p-6 md:p-16">
+<body>
 
-    <!-- Header / Navigation -->
-    <nav class="flex justify-between items-center max-w-6xl mx-auto mb-24">
-        <h1 class="text-3xl font-black tracking-tighter gold-glow italic">VISTARA TECH</h1>
-        <div class="hidden md:flex space-x-10 text-xs uppercase font-bold tracking-[0.2em] text-gray-400">
-            <a href="#" class="hover:text-white transition">Home</a>
-            <a href="#projects" class="hover:text-white transition">Projects</a>
-            <a href="#skills" class="hover:text-white transition">Expertise</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 bg-[#0A0A0A]/80">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-xl font-extrabold tracking-tighter uppercase">Vistara<span class="text-[#D4AF37]">Tech</span></div>
+            <div class="hidden md:flex space-x-10 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#projects" class="hover:text-white transition">Portfolio</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+            <button onclick="window.open('https://linkedin.com')" class="btn-main px-6 py-2 text-[10px] uppercase rounded">Connect</button>
         </div>
-        <a href="https://linkedin.com" target="_blank" class="btn-gold px-6 py-2 text-xs rounded-sm tracking-widest uppercase">Connect</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="max-w-5xl mx-auto text-center py-20">
-        <span class="text-xs font-bold tracking-[0.5em] text-gray-500 uppercase mb-4 block">Future Data Scientist & Game Architect</span>
-        <h2 class="text-6xl md:text-8xl font-black mb-8 leading-tight">Engineering <br> <span class="gradient-text">Digital Empires.</span></h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-12 font-light">Building automated software solutions and immersive game logic. Driven by data, powered by ambition. 🏎️ Black BMW loading...</p>
-        <div class="flex flex-wrap justify-center gap-6">
-            <a href="#projects" class="btn-gold px-10 py-4 rounded-full text-sm">Explore Portfolio</a>
-            <button class="border border-gray-800 px-10 py-4 rounded-full text-sm hover:bg-white hover:text-black transition">Read My Journey</button>
+    <header class="pt-48 pb-32 px-6 text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+            Building Scalable <br> <span class="text-[#D4AF37]">Digital Solutions.</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl font-light mb-12 leading-relaxed">
+            Vistara Tech specializes in Software Development, Data Analytics, and Advanced Game Logic. 
+            Providing technical infrastructure for modern digital ecosystems.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-6">
+            <a href="#services" class="btn-main px-10 py-4 text-xs uppercase rounded">View Our Services</a>
+            <a href="#contact" class="border border-gray-800 px-10 py-4 text-xs uppercase rounded hover:bg-white hover:text-black transition">Get In Touch</a>
+        </div>
+    </header>
+
+    <!-- Services / Expertise -->
+    <section id="services" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <span class="section-title">Expertise</span>
+            <h2 class="text-3xl font-bold mt-4">Core Capabilities</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="service-card p-10 rounded-lg">
+                <h3 class="text-lg font-bold mb-4">Data Analytics</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Leveraging Python-based frameworks like Pandas and NumPy to transform raw data into strategic business insights.</p>
+            </div>
+            <div class="service-card p-10 rounded-lg">
+                <h3 class="text-lg font-bold mb-4">Software Logic</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Architecting robust and scalable software backends designed for high-performance user interactions.</p>
+            </div>
+            <div class="service-card p-10 rounded-lg">
+                <h3 class="text-lg font-bold mb-4">Game Architecture</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Developing advanced game logic modules for seamless integration across digital platforms and engines.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="skills" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 py-32">
-        <div class="card-premium p-10 rounded-2xl">
-            <div class="w-10 h-10 bg-yellow-900/20 rounded-lg flex items-center justify-center mb-6 text-yellow-600 font-bold">01</div>
-            <h3 class="text-xl font-bold mb-4">Python & Data</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Mastering advanced analytics using Pandas and NumPy for strategic insights.</p>
+    <!-- Portfolio Placeholder -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <span class="section-title">Portfolio</span>
+                <h2 class="text-3xl font-bold mt-4">Selected Works</h2>
+            </div>
+            <p class="text-gray-500 text-sm mt-4 md:mt-0">Curating 50+ Logic Modules</p>
         </div>
-        <div class="card-premium p-10 rounded-2xl">
-            <div class="w-10 h-10 bg-yellow-900/20 rounded-lg flex items-center justify-center mb-6 text-yellow-600 font-bold">02</div>
-            <h3 class="text-xl font-bold mb-4">Game Logic</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Designing high-performance game logic modules for the GamePix ecosystem.</p>
-        </div>
-        <div class="card-premium p-10 rounded-2xl">
-            <div class="w-10 h-10 bg-yellow-900/20 rounded-lg flex items-center justify-center mb-6 text-yellow-600 font-bold">03</div>
-            <h3 class="text-xl font-bold mb-4">Software Dev</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Building automated business tools to streamline global software workflows.</p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="service-card h-64 flex items-center justify-center text-gray-700 font-bold uppercase tracking-widest italic rounded-lg">Game Analytics Tool [Coming Soon]</div>
+            <div class="service-card h-64 flex items-center justify-center text-gray-700 font-bold uppercase tracking-widest italic rounded-lg">Vistara Engine Logic [In Dev]</div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="max-w-6xl mx-auto text-center py-20 border-t border-gray-900">
-        <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase mb-4">&copy; 2026 VISTARA TECH | Founder: Srishti</p>
-        <div class="flex justify-center space-x-6 text-gray-500">
-            <span class="hover:text-yellow-600 cursor-pointer">GitHub</span>
-            <span class="hover:text-yellow-600 cursor-pointer text-yellow-600 font-bold">#BMW-Vision</span>
-            <span class="hover:text-yellow-600 cursor-pointer">LinkedIn</span>
+    <footer id="contact" class="max-w-7xl mx-auto px-6 py-20 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-8 md:mb-0">
+            <div class="text-lg font-extrabold uppercase mb-2">Vistara Tech</div>
+            <p class="text-gray-500 text-[10px] tracking-widest uppercase">&copy; 2026 Srishti | Founder</p>
+        </div>
+        <div class="flex space-x-12 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+            <a href="#" class="hover:text-[#D4AF37] transition">LinkedIn</a>
+            <a href="#" class="hover:text-[#D4AF37] transition">GitHub</a>
+            <a href="#" class="hover:text-[#D4AF37] transition">Twitter</a>
         </div>
     </footer>
 
